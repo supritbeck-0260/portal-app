@@ -1,0 +1,20 @@
+[
+  {
+    "name": "home",
+    "path": "/",
+    "location": "Home",
+    "exact": true
+  },
+  {
+    "name": "form",
+    "path": "/:id",
+    "location": "Form",
+    "exact": true
+  },
+  {
+    "name": "details",
+    "path": "/:id/details",
+    "location": "Details",
+    "exact": true
+  }
+]

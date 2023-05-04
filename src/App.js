@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import "./App.css";
+import PortalContext from "./context/PortalContext";
+import RouterHandler from "./RouterHandler";
+import originalData from "./data/portalData.json";
 function App() {
+  const [portalData, setPortalData] = useState({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <PortalContext.Provider
+        value={{ portalData, setPortalData, originalData }}
+      >
+        <div className="App">
+          <h1>Portal App</h1>
+          <RouterHandler />
+        </div>
+      </PortalContext.Provider>
+    </>
   );
 }
 
 export default App;
+export { PortalContext };
